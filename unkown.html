@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<mata charset="utf-8">
+</head>
+<body>
+<script>
+
+
+//BMI
+//体重kg/（身長m＊身長m）
+
+//論理演算子(条件式を複数書くときに使う)
+//&&(かつ、アンド)
+//||（または、オア）
+//!(じゃない、ノット)
+/*
+if(!（条件式)&&条件式||条件式){
+
+}
+*/
+
+//switch...case
+/*
+switch(式){
+  case :
+    命令文；
+    break;
+  default:
+    命令文;
+    break;
+}
+*/
+
+//constで使う。breakに注意
+/*
+const TYPE1;
+const
+
+switch(x=2){
+  case TYPE1:
+  y=1;
+  break;
+  case 2:
+  y=10;
+  break;
+  case 3:
+  case 4;
+  case 5;
+}
+*/
+
+//条件分=ifとswitch
+/*
+let x=1;
+let score=1000;
+*/
+
+//if文
+/*
+if(条件式)//条件式が満たされるときに命令文が実行される
+{
+ 命令文;
+ 命令文;
+ 命令文;
+ 命令文;
+}
+*/
+
+//if else文
+/*
+if(x==1){
+  y=1;
+}
+else if(x==2)
+else{
+ y=3;
+}
+else{
+  y=2;
+}
+*/
+//xが１だった時yは１になり、xが１じゃなかった時yは２になる
+
+//変数について
+
+//データ　→　入れ物
+
+//変数の宣言
+/*
+var score
+let score;
+const SCORE=;//一度宣言したら変えられないコンスト（定数）
+ver,let,const
+*/
+
+//数値と文字列
+//score=1000;+1   (1001にならない)
+
+//式と演算子について
+
+/*
+let x=1;
+let score=1000;
+let myName="田中";
+*/
+
+//代入演算子
+// = 代入
+// +=　加算代入
+// -=　減算代入
+// /=  除算代入
+// *= 乗算
+
+//ビット演算子
+
+//参考演算子
+//条件？式１：式２
+
+// x=x+1;
+//x++:
+//x=x+100;
+//X+=100;
+
+/*
+let y;
+x=2;
+y=x;
+y=x=2;
+*/
+
+//算術演算子
+//四則演算+-*/
+//%あまり
+//＋＋インクリメント
+//--デクリメント
+//ー単行符号反転演算子
+//＊＊冪乗（累乗）指数
+//＋連結演算子
+//比較演算子
+///////// ＝＝ 等しい　if(x==1){}
+///////// ===厳密に等しい
+///////// != 等しくないif(x!=){}
+///////// !== 厳密に等しくない
+///////// > 大きい
+///////// >=　以上
+///////// <　小さい
+///////// <= 以下
+
+/*
+ x=1;
+ score=1000;
+ myName = "じんちん";
+ */
+
+//変数名ルール
+//半角のアルファベット
+//半角の数字（先頭は除く）
+//半角の_（アンダースコア）
+//全角文字
+//↑これらを主に使って行く
+
+//my_Name,
+//yourName,
+
+//杉本のBMIを表示
+
+//5回表示して、都度体重を5キロ増やしてBMIを再計算
+
+ function printBMI(name,height,weight)
+ {
+
+   let bmi=calcBMI(height,weight);
+   document.write( name + "さん、こんにちは<BR>");
+   document.write("身長"+height+"cm<BR>");
+   document.write("体重"+weight+"kg<BR>");
+   document.write("あなたのBMIは"+bmi+"です。<BR>");
+
+    const BMI_YASE=18.5;
+    const BMI_NORMAL=22.0;
+    const BMI_FAT=25.0;
+
+    if(calcBMI<=BMI_YASE){
+      document.write("あなたはガリガリ<BR>");
+    }
+    else if(BMI_YASE<calcBMI<BMI_NORMAL){
+      document.write("あなたは普通<BR>");
+    }
+    else if(calcBMI>=BMI_FAT){
+      document.write("あなたはデブ<BR>");
+    }
+       document.write("<BR>")
+   }
+function calcBMI(height,weight)
+{
+  return weight/(height/100)**2;
+}
+
+let m=[
+  ["じん",166,58],
+  ["ママ",160,54],
+];
+
+for(let i=0;i<2;i++){
+  printBMI(m[i][0],m[i][1],m[i][2],m[i][3],m[i][4]);
+}
+
+/*
+let name=["じん","ママ","DAIGO","DaiGo","大悟"];
+let height=[166,160,178,173,170];
+let weight=[58,54,61,60,60];
+
+for(let i=0;i<5;i++){
+  printBMI(name[i],height[i],weight[i]);
+}
+*/
+
+/*
+printBMI("じん",166,58);
+printBMI("ママ",160,54);
+printBMI("DAIGO",178,61);
+printBMI("DaiGo",173,60);
+printBMI("大悟",170,60);
+printBMI("山根",180,54);
+printBMI("田中",187,58);
+printBMI("小杉",170,110);
+*/
+
+ //コメント
+
+ 　/*
+ コメント
+ */
+
+   /*
+   基本的な文法ルール
+   制御文、関数{
+     命令文；
+     命令文；
+   }
+   */
+
+</script>
+</body>
+</html>

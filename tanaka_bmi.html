@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<body style="font-size:40px">
+  <canvas width=300 height=300 id="ccc"></canvas>
+  <div id="aaa">ああああ</div>
+  <script>
+
+//クラス。。。オブジェクト指向
+class parson
+{
+  constructor(name,height,weight)
+  {
+    this.name=name;
+    this.height=height;
+    this.weight=weight;
+  }
+  printBMI()
+  {
+    let bmi=this.weight/(this.height/100)**2;
+    document.write(this.name+"さん、こんにちは<BR>");
+    document.write("身長は"+this.height+"cm<BR>");
+    document.write("体重は"+this.weight+"kg<BR>");
+    document.write("あなたのBMIは"+bmi.toFixed(1)+"です<BR>");
+    document.write(this.name+"さん、さようなら");
+    document.write("<BR>")
+  }
+
+  eat(val)
+  {
+    document.write(this.name+"はご飯を食べる<BR>");
+    this.weight+=val;
+    document.write(val+"kg体重が増えました<BR>");
+    document.write("<BR>");
+  }
+
+  run(val)
+  {
+    document.write(this.name+"はすごい走った<BR>");
+    this.weight-=val;
+    document.write(val+"kg体重が減りましたs<BR>");
+    document.write("<BR>");
+  }
+}
+
+let tanaka=new parson("田中",187,58);
+tanaka.printBMI();
+
+//number,sting,booean,array
+
+let x=1;
+let s="いい";
+
+//date,math
+
+let now=new Date();
+document.write(now.getFullYear()+"<BR>");
+
+let y=1.56;
+y=1+Math.floor(Math.random()*100);
+document.write(y+"<BR>");
+
+//APU document
+
+document.title="タイトル";
+let elm=document.getElementById("aaa");
+elm.innerText="いいいい";
+elm.style.position="absolute";
+elm.style.top="100px";
+elm.style.left="300px";
+
+//canvas html5から
+let can=document.getElementById("ccc");
+let con=can.getContext("2d");
+
+con.fillStyle="red";
+con.fillRect(0,0,100,100);
+con.fillStyle="rgba(0,0,225,0.7)";
+con.fillRect(50,50,100,100);
+con.fillStyle="rgba(0,225,0,0.7)";
+con.beginPath();
+con.arc(150,150,50,Math.PI*50/180,Math.PI*300/180);
+con.fill();
+
+//イベント
+elm.onclick=function(e)
+{
+  let x=(Math.random()*400).toFixed();
+  let y=(Math.random()*400).toFixed();
+  elm.style.left=x+"px";
+  elm.style.top=y+"px";
+}
+can.onmousemove=function(e)
+{
+  let x=(Math.random()*400).toFixed();
+  let y=(Math.random()*400).toFixed();
+  can.style.position="absolute";
+  elm.style.left=x+"px";
+  elm.style.top=y+"px";
+}
+
+  </script>
+</body>
+</html>
